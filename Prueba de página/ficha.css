@@ -1,50 +1,88 @@
-* {
+body { 
+    font-family: Poppins, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #FFFCF3;
 }
 
-body, html {
-    height: 100%;
-    font-family: Lora, sans-serif;
+.volver {
+    background-color: #6f122f;
+    border: none;
+    color: white;
+    padding: 1rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0.1rem 0.1rem;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.volver:hover {
+    background-color: #2c4643;
+    transform: translateY(-2px);
+}
+
+.volver:active {
+    background-color: #6f122f;
+    transform: translateY(2px);
+}
+
+.titulo {
+    height: 100vh;
+    margin: 0;
+    font-size: 2rem;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
 }
 
 .container {
     display: flex;
-    height: 100vh;
+    margin-top: 0.5rem; 
 }
 
 .left, .right {
     flex: 1;
+    opacity: 0; /* Empieza invisible */
+    transform: translateY(30px); /* Desplazado hacia abajo */
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Transición suave */
 }
 
+.left.show, .right.show {
+    opacity: 1; /* Se vuelve visible */
+    transform: translateY(0); /* Vuelve a su posición original */
+}
 
 .left {
-    background-color: #f4f4f4;
+    background-color: #FFFCF3;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px;
+    padding: 1rem;
 }
 
 .ficha {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
+    border-radius: 0.5rem; /* Corrige la coma */
     max-width: 500px;
     width: 100%;
 }
 
-/* Estilo para el contenedor que agrupa la imagen y los datos personales */
 .perfil-info {
     display: flex; 
     align-items: center;
-    margin-bottom: 20px; 
+    margin-bottom: 1.5rem; 
 }
 
 .perfil {
-    width: 120px;  
-    height: 120px;
+    width: 7.5rem; /* Corrige la coma */
+    height: 7.5rem;
     border-radius: 50%; 
     object-fit: cover;
     margin-right: 20px; 
@@ -52,26 +90,57 @@ body, html {
 
 .perfil-info ul {
     list-style-type: none;
-    padding-left: 0;
+    padding-left: 1rem;
 }
 
-p {
-    margin-bottom: 10px;
+li.gran {
+    font-weight: 600;
 }
 
-.perfil-info li {
-    margin-bottom: 10px;
+li.peq {
+    font-size: small;
+    font-style: italic;
 }
 
-.ficha h2 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-family: Poppins, sans-serif; 
+.ficha p {
+    margin-bottom: 0;
 }
 
-/* Estilo para el lado derecho */
+.indice {
+    height: 80vh;
+    margin-top: 2rem;
+    padding-left: 6rem;
+    opacity: 0; /* Empieza invisible */
+    transform: translateY(30px); /* Desplazado hacia abajo */
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Transición suave */
+}
+
+.indice.show {
+    opacity: 1; /* Se vuelve visible */
+    transform: translateY(0); /* Vuelve a su posición original */
+}
+
+.indice h1 {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    white-space: nowrap;
+}
+
+.indice a {
+
+    padding-left: 1rem;
+    display: block; /* Esto hace que los enlaces se comporten como bloques y cada uno aparezca en una línea nueva */
+    margin: 5px 0;  /* Margen para separar los enlaces */
+    text-decoration: none; /* Quitar el subrayado de los enlaces */
+    color: #2c4643;
+}
+
+.indice a:hover {
+    color: #6f122f; /* Cambia el color al pasar el ratón por encima */
+}
+
 .right {
-    background-color: #BF8FA1;
     display: flex;
     justify-content: center;
     align-items: center;
