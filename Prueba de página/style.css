@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Lora, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left, .right {
+    flex: 1;
+}
+
+
+.left {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.ficha {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Estilo para el contenedor que agrupa la imagen y los datos personales */
+.perfil-info {
+    display: flex; 
+    align-items: center;
+    margin-bottom: 20px; 
+}
+
+.perfil {
+    width: 120px;  
+    height: 120px;
+    border-radius: 50%; 
+    object-fit: cover;
+    margin-right: 20px; 
+}
+
+.perfil-info ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+.perfil-info li {
+    margin-bottom: 10px;
+}
+
+.ficha h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Poppins, sans-serif; 
+}
+
+/* Estilo para el lado derecho */
+.right {
+    background-color: #BF8FA1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
