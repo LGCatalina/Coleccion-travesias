@@ -21,3 +21,4 @@ window.addEventListener('scroll', mostrarAlDesplazar);
 
 // Llama a la función al cargar la página
 mostrarAlDesplazar();
+
