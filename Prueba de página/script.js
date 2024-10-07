@@ -35,11 +35,11 @@ let isPlaying = false;
 audioButton.addEventListener('click', () => {
     if (isPlaying) {
         audio.pause();  // Pausa el audio
-        audioIcon.src = 'ruta-a-tu-imagen-play.png'; // Cambia la imagen a 'play'
+        audioIcon.src = 'img/play.png'; // Cambia la imagen a 'play'
         audioIcon.alt = 'Play'; // Cambia el texto alternativo
     } else {
         audio.play();   // Reproduce el audio
-        audioIcon.src = 'ruta-a-tu-imagen-pause.png'; // Cambia la imagen a 'pause'
+        audioIcon.src = 'img/pausa.png'; // Cambia la imagen a 'pause'
         audioIcon.alt = 'Pause'; // Cambia el texto alternativo
     }
     isPlaying = !isPlaying; // Cambia el estado
@@ -49,7 +49,7 @@ audioButton.addEventListener('click', () => {
 audioButton.addEventListener('dblclick', () => {
     audio.currentTime = 0; // Reinicia el audio al inicio
     audio.play();          // Reproduce el audio
-    audioIcon.src = 'ruta-a-tu-imagen-pause.png'; // Cambia la imagen a 'pause'
+    audioIcon.src = 'img/pausa.png'; // Cambia la imagen a 'pause'
     audioIcon.alt = 'Pause'; // Cambia el texto alternativo
     isPlaying = true; // Asegura que el estado sea 'reproduciendo'
 });
