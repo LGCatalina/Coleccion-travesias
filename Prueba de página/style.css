@@ -22,7 +22,7 @@ h1 {
     padding-left: 5rem;
 }
 .arq {
-    color:#2c4643;
+    color:#1a253b;
     padding-left: 5rem;
 }
 
@@ -37,7 +37,7 @@ h1 {
 }
 
 .galeria2 {
-    background-color:#2c4643d0 ;
+    background-color:#1a253bd2 ;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -57,7 +57,7 @@ h1 {
 .prof:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     background: hsla(15, 2%, 40%, 0.185);
-    transform: scale(1.05);
+    transform: scale(1.2);
 
 }
 .prof img {
@@ -65,17 +65,14 @@ h1 {
     height: 15rem;
 }
 .prof p {
-    font-weight: 500;
+    font-weight: 700;
+    font-size: 1.5rem;
     display: none;
     position: absolute;
-    bottom: 8px;
+    bottom: 4px;
     left: 50%;
     transform: translateX(-50%);
-    color: white;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 1rem;
-    white-space: nowrap;
+    color:#6f122f;
 }
 
 .prof:hover p {
