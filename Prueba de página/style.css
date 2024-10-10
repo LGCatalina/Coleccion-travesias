@@ -56,7 +56,6 @@ h1 {
 
 .prof:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background: hsla(15, 2%, 40%, 0.185);
     transform: scale(1.2);
 
 }
@@ -65,14 +64,15 @@ h1 {
     height: 15rem;
 }
 .prof p {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.5rem;
     display: none;
     position: absolute;
-    bottom: 4px;
+    bottom: 2px;
     left: 50%;
     transform: translateX(-50%);
     color:#6f122f;
+    text-shadow: 2px 4px 5px rgba(0, 0, 0, 0.561);
 }
 
 .prof:hover p {

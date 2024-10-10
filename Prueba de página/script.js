@@ -1,5 +1,7 @@
 // Selecciona todos los elementos que deben aparecer con el scroll
 const secciones = document.querySelectorAll('.left, .right, .indice, .ficha, .row');
+const cierre = document.querySelector('.cierre'); // Contenedor de h1 y p
+const intro = document.querySelector('.intro'); // Contenedor de intro
 
 // Función para mostrar los elementos al hacer scroll
 function mostrarAlDesplazar() {
@@ -14,6 +16,24 @@ function mostrarAlDesplazar() {
             seccion.classList.remove('show'); // Elimina la clase si no está visible
         }
     });
+
+    // Mostrar el contenedor de la clase 'cierre'
+    const topPosCierre = cierre.getBoundingClientRect().top;
+
+    if (topPosCierre < triggerBottom) {
+        cierre.classList.add('visible'); // Añade la clase 'visible' para la animación
+    } else {
+        cierre.classList.remove('visible'); // Elimina la clase si no está visible
+    }
+
+    // Mostrar el contenedor de la clase 'intro'
+    const topPosIntro = intro.getBoundingClientRect().top;
+
+    if (topPosIntro < triggerBottom) {
+        intro.classList.add('visible'); // Añade la clase 'visible' para la animación
+    } else {
+        intro.classList.remove('visible'); // Elimina la clase si no está visible
+    }
 }
 
 // Escucha el evento de scroll
@@ -21,7 +41,6 @@ window.addEventListener('scroll', mostrarAlDesplazar);
 
 // Llama a la función al cargar la página
 mostrarAlDesplazar();
-
 
 // Selecciona el botón, el elemento de audio y el ícono
 const audioButton = document.getElementById('audioButton');
@@ -53,4 +72,3 @@ audioButton.addEventListener('dblclick', () => {
     audioIcon.alt = 'Pause'; // Cambia el texto alternativo
     isPlaying = true; // Asegura que el estado sea 'reproduciendo'
 });
-
