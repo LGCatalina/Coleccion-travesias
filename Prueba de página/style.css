@@ -47,11 +47,18 @@ h1 {
 }
 
 .prof {
-    background: transparent;
+    background: #FFFCF3;
     border: none;
     padding: 0;
     cursor: pointer;
     transition: transform 0.3s ease;
+    position: relative;
+    width: 15rem;  /* Definir el ancho del botón */
+    height: 15rem; /* Definir el alto del botón */
+    display: flex;
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    overflow: hidden;  /* Asegura que el texto no salga del cuadro */
 }
 
 .prof:hover {
@@ -59,23 +66,32 @@ h1 {
     transform: scale(1.2);
 
 }
+
 .prof img {
-    width: 15rem;
-    height: 15rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
+.prof:hover img {
+    filter: blur(0.5px);
+}
+
 .prof p {
     font-weight: 600;
     font-size: 1.5rem;
-    display: none;
-    position: absolute;
-    bottom: 2px;
+    opacity: 0;  /* Se oculta el texto inicialmente */
+    transition: opacity 0.3s ease;
+    color: #6f122f;
+    position: absolute; /* Posicionamos el texto dentro del botón */
+    align-items: center;
     left: 50%;
     transform: translateX(-50%);
-    color:#6f122f;
-    text-shadow: 2px 4px 5px rgba(0, 0, 0, 0.561);
+    margin: 0;
 }
 
 .prof:hover p {
-    display: block;
+    opacity: 1;  /* Hacer visible el texto al hacer hover */
 }
+
+
 
