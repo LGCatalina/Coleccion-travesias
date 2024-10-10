@@ -200,16 +200,16 @@ li.peq {
 }
 
 .intro{ 
-    margin: 0 auto;
     padding: 1rem;
     margin-left: 15%;
     margin-right: 15%;
-    opacity: 0; /* Inicia oculto */
-    transform: translateY(20px); /* Desplazado hacia abajo */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
+    margin-top: 5%;
+    margin-bottom: 8%;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 3s ease-out, transform 3s ease-out; /* Transición más lenta */
 }
-
-.intro.visible {
+.intro.show {
     opacity: 1; /* Se vuelve visible */
     transform: translateY(0); /* Vuelve a su posición original */
 }
@@ -228,7 +228,7 @@ li.peq {
 }
 
 .row h1{
-    margin-top: 20%;
+    margin-top: 5%;
     margin-bottom: 3%;
     text-justify: center;
 }
@@ -243,14 +243,27 @@ li.peq {
     transition: opacity 3s ease-out, transform 3s ease-out; /* Transición más lenta */
 }
 
+.rowtit {
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    margin-bottom: 0rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 3s ease-out, transform 3s ease-out; /* Transición más lenta */
+}
+
 .row.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.rowtit.show {
     opacity: 1;
     transform: translateY(0);
 }
 
 .column {
     flex: 1;
-    padding: 1rem;
+
 }
 
 .text-column h2 {
@@ -270,14 +283,16 @@ li.peq {
 }
 
 .audio-button {
-    background-color: transparent; /* Sin fondo para que solo se vea la imagen */
-    border: none; /* Sin borde */
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
     cursor: pointer;
-    position: fixed;
-    bottom: 3rem;  /* Posición desde la parte inferior */
-    left: 8%;   /* Posición desde el lado derecho */
-    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
-    opacity: 0.9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
 .audio-button img {
@@ -289,35 +304,52 @@ li.peq {
 .audio-button:hover img {
     transform: scale(1.1); /* Aumenta un poco el tamaño de la imagen al pasar el ratón */
 }
-
-.cierre{ 
-    margin: 0 auto;
-    padding: 1rem;
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-bottom: 5rem;
-    opacity: 0; /* Inicia oculto */
-    transform: translateY(20px); /* Desplazado hacia abajo */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
+.audio-controls {
+    display: none;
+    margin-top: -3rem;
+    margin-left: 5rem;
+    width: 200px;
+    background-color: transparent;
+    padding: 5px;
+    border-radius: 8px;
 }
 
-.cierre.visible {
-    opacity: 1; /* Se vuelve visible */
-    transform: translateY(0); /* Vuelve a su posición original */
+/* Estilos para la barra de progreso */
+#seekBar {
+    width: 100%;
+    cursor: pointer;
 }
 
-.cierre p{
-    column-count: 2;
-    column-gap: 1.5rem;
+/* Estilos para los tiempos de audio */
+#currentTime, #duration {
+    font-size: 12px;
+    color: #6f122f;
+}
+.speed-control {
+    display: flex; /* Usa flexbox para alinear elementos */
+    align-items: center; /* Centra verticalmente el control */
+}
+
+.speed-control label {
+    margin-right: 5px; /* Espacio entre la etiqueta y el menú desplegable */
+}
+
+.speed-control select {
+    margin-left: 5.5rem;
+    margin-top: -2rem;
+    font-size: 0.8rem;
+    background-color: #FFFCF3;
+    border-radius: 5px;
+    border-color: #6f122f;
+    color: #6f122f;
 }
 
 
 footer {
-    background-color: #6f122fbc;
-    color: #fff;
+    color: #6f122f;
     padding: 20px 0;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 2rempx;
 }
 
 .footer-content {
@@ -336,7 +368,6 @@ footer {
 .footer-section h3 {
     margin-bottom: 20px;
     font-size: 1.5rem;
-    border-bottom: 2px solid #fff;
     padding-bottom: 10px;
 }
 
@@ -355,7 +386,7 @@ footer {
 
 .footer-section ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #6f122f;
 }
 
 .footer-section ul li a:hover {
@@ -363,7 +394,6 @@ footer {
 }
 
 .footer-bottom {
-    background-color: #6f122fa0;
     padding: 10px 0;
     font-size: 0.9rem;
     margin-top: 10px;
@@ -375,6 +405,6 @@ footer {
 }
 
 .footer-bottom a {
-    color: #fff;
+    color: #6f122f;
     text-decoration: underline;
 }

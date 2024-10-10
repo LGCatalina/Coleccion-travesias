@@ -1,7 +1,5 @@
 // Selecciona todos los elementos que deben aparecer con el scroll
-const secciones = document.querySelectorAll('.left, .right, .indice, .ficha, .row');
-const cierre = document.querySelector('.cierre'); // Contenedor de h1 y p
-const intro = document.querySelector('.intro'); // Contenedor de intro
+const secciones = document.querySelectorAll('.left, .right, .indice, .ficha, .row, .rowtit, .intro, .cierre');
 
 // Función para mostrar los elementos al hacer scroll
 function mostrarAlDesplazar() {
@@ -16,24 +14,6 @@ function mostrarAlDesplazar() {
             seccion.classList.remove('show'); // Elimina la clase si no está visible
         }
     });
-
-    // Mostrar el contenedor de la clase 'cierre'
-    const topPosCierre = cierre.getBoundingClientRect().top;
-
-    if (topPosCierre < triggerBottom) {
-        cierre.classList.add('visible'); // Añade la clase 'visible' para la animación
-    } else {
-        cierre.classList.remove('visible'); // Elimina la clase si no está visible
-    }
-
-    // Mostrar el contenedor de la clase 'intro'
-    const topPosIntro = intro.getBoundingClientRect().top;
-
-    if (topPosIntro < triggerBottom) {
-        intro.classList.add('visible'); // Añade la clase 'visible' para la animación
-    } else {
-        intro.classList.remove('visible'); // Elimina la clase si no está visible
-    }
 }
 
 // Escucha el evento de scroll
@@ -42,33 +22,56 @@ window.addEventListener('scroll', mostrarAlDesplazar);
 // Llama a la función al cargar la página
 mostrarAlDesplazar();
 
-// Selecciona el botón, el elemento de audio y el ícono
+// Selecciona el botón, el icono y el audio
 const audioButton = document.getElementById('audioButton');
-const audio = document.getElementById('audio');
 const audioIcon = document.getElementById('audioIcon');
+const audio = document.getElementById('audio');
+const audioControls = document.getElementById('audioControls');
+const seekBar = document.getElementById('seekBar');
+const currentTimeSpan = document.getElementById('currentTime');
+const durationSpan = document.getElementById('duration');
+const speedControl = document.getElementById('speedControl'); 
 
-// Variable para controlar el estado de reproducción
-let isPlaying = false;
-
-// Función para reproducir o pausar el audio
-audioButton.addEventListener('click', () => {
-    if (isPlaying) {
-        audio.pause();  // Pausa el audio
-        audioIcon.src = 'img/play.png'; // Cambia la imagen a 'play'
-        audioIcon.alt = 'Play'; // Cambia el texto alternativo
+// Evento de clic para controlar la reproducción del audio
+audioButton.addEventListener('click', function() {
+    if (audio.paused) {
+        audio.play();  // Reproduce el audio
+        audioIcon.src = 'img/pausa.png';  // Cambia el icono a "Pause"
+        audioControls.style.display = 'block';
+        speedControl.style.display = 'block';
     } else {
-        audio.play();   // Reproduce el audio
-        audioIcon.src = 'img/pausa.png'; // Cambia la imagen a 'pause'
-        audioIcon.alt = 'Pause'; // Cambia el texto alternativo
+        audio.pause();  // Pausa el audio
+        audioIcon.src = 'img/play.png';  // Cambia el icono a "Play"
+        audioControls.style.display = 'none';
+        speedControl.style.display = 'none';
     }
-    isPlaying = !isPlaying; // Cambia el estado
 });
 
-// Evento para reiniciar el audio al hacer doble clic
-audioButton.addEventListener('dblclick', () => {
-    audio.currentTime = 0; // Reinicia el audio al inicio
-    audio.play();          // Reproduce el audio
-    audioIcon.src = 'img/pausa.png'; // Cambia la imagen a 'pause'
-    audioIcon.alt = 'Pause'; // Cambia el texto alternativo
-    isPlaying = true; // Asegura que el estado sea 'reproduciendo'
+// Actualiza el tiempo total del audio cuando está listo
+audio.addEventListener('loadedmetadata', function() {
+    durationSpan.textContent = formatTime(audio.duration);
+});
+
+// Actualiza la barra de progreso mientras el audio se reproduce
+audio.addEventListener('timeupdate', function() {
+    const value = (audio.currentTime / audio.duration) * 100;
+    seekBar.value = value;
+    currentTimeSpan.textContent = formatTime(audio.currentTime);
+});
+
+// Controla el avance manual del audio cuando se arrastra la barra
+seekBar.addEventListener('input', function() {
+    const time = (seekBar.value / 100) * audio.duration;
+    audio.currentTime = time;
+});
+
+// Función para formatear el tiempo en minutos y segundos
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return minutes + ':' + (secs < 10 ? '0' + secs : secs);
+}
+// Control de velocidad del audio
+speedControl.addEventListener('change', function() {
+    audio.playbackRate = speedControl.value;  // Cambia la velocidad de reproducción
 });

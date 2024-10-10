@@ -93,12 +93,6 @@
                 <a href="#cierre">Notas finales</a>
                 <img src="img/croquis3.png" alt="Image 1">         
     </div>
-
-    <button class="audio-button" id="audioButton">
-        <img id="audioIcon" src="img/play.png" alt="Play" />
-    </button>
-    
-    <audio id="audio" src="img/Billie Eilish - WILDFLOWER | A COLORS SHOW [ ezmp3.cc ].mp3" preload="auto"></audio>
    
     <div class="intro">
         <h1 id="intro">Introducción</h1>
@@ -108,8 +102,29 @@
     </div>
 
     <div class="cuerpo">
-        <div class="row">
+        <div class="rowtit">
             <h1 id="preparacion">Preparación</h1>
+            <button class="audio-button" id="audioButton">
+             <img id="audioIcon" src="img/play.png" alt="Play" />
+            </button>
+            <div class="audio-controls" id="audioControls">
+                <div class="progress-container">
+                    <input type="range" id="seekBar" value="0" max="100">
+                    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                </div>
+        
+                <div class="speed-control">
+                    <label for="speedControl"></label>
+                    <select id="speedControl">
+                        <option value="0.5">0.5x</option>
+                        <option value="1" selected>1x (Normal)</option>
+                        <option value="1.5">1.5x</option>
+                        <option value="2">2x</option>
+                    </select>
+                </div>
+            </div>
+    
+            <audio id="audio" src="img/audioprueba.mp3" preload="auto"></audio>
         </div>
         <div class="row">    
             <div class="column image-column">
@@ -129,8 +144,28 @@
                 <img src="img/croquis2.png" alt="Image 2">
             </div>
         </div>
-        <div class="row">
+        <div class="rowtit">
             <h1 id="travesia">La travesía</h1>
+            <button class="audio-button" id="audioButton">
+                <img id="audioIcon" src="img/play.png" alt="Play" />
+               </button>
+               <div class="audio-controls" id="audioControls">
+                <div class="progress-container">
+                    <input type="range" id="seekBar" value="0" max="100">
+                    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                </div>
+        
+                <div class="speed-control">
+                    <label for="speedControl"></label>
+                    <select id="speedControl">
+                        <option value="0.5">0.5x</option>
+                        <option value="1" selected>1x (Normal)</option>
+                        <option value="1.5">1.5x</option>
+                        <option value="2">2x</option>
+                    </select>
+                </div>
+            </div>
+               <audio id="audio" src="img/audioprueba.mp3" preload="auto"></audio>
         </div>
         <div class="row">
             <div class="column image-column">
@@ -151,8 +186,29 @@
                 <img src="img/croquis2.png" alt="Image 2">
             </div>
         </div>
-        <div class="row">
+        <div class="rowtit">
             <h1 id="retorno">El retorno</h1>
+            <button class="audio-button" id="audioButton">
+                <img id="audioIcon" src="img/play.png" alt="Play" />
+               </button>
+               < <div class="audio-controls" id="audioControls">
+                <div class="progress-container">
+                    <input type="range" id="seekBar" value="0" max="100">
+                    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                </div>
+        
+                <div class="speed-control">
+                    <label for="speedControl">Velocidad:</label>
+                    <select id="speedControl">
+                        <option value="0.5">0.5x</option>
+                        <option value="1" selected>1x (Normal)</option>
+                        <option value="1.5">1.5x</option>
+                        <option value="2">2x</option>
+                    </select>
+                </div>
+            </div>
+       
+               <audio id="audio" src="img/audioprueba.mp3" preload="auto"></audio>
         </div>
 
         <div class="row">
@@ -173,8 +229,29 @@
                 <img src="img/croquis2.png" alt="Image 2">
             </div>
         </div>
-        <div class="row">
+        <div class="rowtit">
             <h1 id="antesahora">El antes y el ahora</h1>
+            <button class="audio-button" id="audioButton">
+                <img id="audioIcon" src="img/play.png" alt="Play" />
+               </button>
+               <div class="audio-controls" id="audioControls">
+                <div class="progress-container">
+                    <input type="range" id="seekBar" value="0" max="100">
+                    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                </div>
+        
+                <div class="speed-control">
+                    <label for="speedControl">Velocidad:</label>
+                    <select id="speedControl">
+                        <option value="0.5">0.5x</option>
+                        <option value="1" selected>1x (Normal)</option>
+                        <option value="1.5">1.5x</option>
+                        <option value="2">2x</option>
+                    </select>
+                </div>
+            </div>
+       
+               <audio id="audio" src="img/audioprueba.mp3" preload="auto"></audio>
         </div>
         <div class="row">
             <div class="column image-column">
@@ -195,26 +272,31 @@
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
 
-    <div class="cierre">
+    <div class="intro">
         <h1 id="cierre">Notas finales</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
     </div>
-
+    <script src="script.js"></script>
 
     <footer>
         <div class="footer-content">
             <div class="footer-section about">
-                <h3>Créditos fotográficos</h3>
-                <p>Imágen...</p>
-                <p>Imágen...</p>            </div>
+                <h3>Portadilla/derechos</h3>
+                <p>Editor...</p>
+                <p>Autor...</p>           
+             </div>
             <div class="footer-section contact">
                 <h3>Créditos de dibujos</h3>
                 <p>Croquis...</p>
                 <p>Croquis...</p>
+            </div>
+            <div class="footer-section info">
+                <h3>Creditos fotográficos</h3>
+                <p>Imágen...</p>
+                <p>Imágen...</p>
             </div>
         </div>
         <div class="footer-bottom">
